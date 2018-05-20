@@ -1,0 +1,2 @@
+rfkill unblock all
+bluetoothctl

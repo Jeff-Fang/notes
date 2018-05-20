@@ -1,0 +1,8 @@
+```bash
+echo `ioreg -l | grep CurrentCapacity | awk '{print $5}'` `ioreg -l | grep MaxCapacity | awk '{print $5}'` | awk '{printf "%.f \n", 100*$1/$2}'
+
+ioreg -l | grep Capacity
+
+ioreg -l | grep BatterySerialNumber
+
+```
