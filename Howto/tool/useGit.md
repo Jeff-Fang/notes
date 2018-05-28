@@ -5,6 +5,7 @@ git config --global user.name
 git config --global user.email
 git config --global user.name "Pablo"
 git config --global user.email "pablo@email.com"
+git config --global credential.helper cache  # Set git to use the credential memory cache
 git init
 ```
 #### Server
