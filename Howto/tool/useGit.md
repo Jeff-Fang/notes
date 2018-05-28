@@ -12,7 +12,8 @@ git init
 git clone --depth 1 https://github.com/Jeff-Fang/RepoName.git
 git remote show origin
 git config --get remote.origin.url
-git remote -v
+git remote -v  # View remote URLs
+git remote set-url origin https://github.com/Jeff-Fang/Udacity-RoboND-P2.git
 git remote add origin https://github.com/Jeff-Fang/RepoName.git
 git push -u origin master
 ```
@@ -20,9 +21,11 @@ git push -u origin master
 ### Project
 #### Branch control
 ```bash
+git branch
 git branch newBranch
 git checkout newBranch
-git branch -d branch_name
+git branch -d branch_name # Delete a branch
+git show-branch -a
 git rebase master
 git push origin --delete <branchName>
 git push origin :<branchName>
