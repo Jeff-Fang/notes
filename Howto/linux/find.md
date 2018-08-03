@@ -1,3 +1,6 @@
+find /home/username/ -name "*.err"
+
+
 Learn more in [here](http://www.binarytides.com/linux-find-command-examples/)
 
 ```bash
