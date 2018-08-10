@@ -1,5 +1,11 @@
 
-Convert Video
+
 ```bash
+# Convert Video
 ffmpeg -i input.wmv -c:v libx264 -preset ultrafast output.mp4
+
+# Reduce file size by lowering rate
+ffmpeg -i MiR_Fleet_CN.mp4 -vcodec libx264 -strict -2 -crf 24 output.mp4
+
 ```
+
