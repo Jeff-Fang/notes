@@ -1,0 +1,446 @@
+[
+  {
+    "id": "001",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "001",
+      "002"
+    ]
+  },
+  {
+    "id": "002",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "002",
+      "003"
+    ]
+  },
+  {
+    "id": "003",
+    "name": "电阻",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "电阻",
+    "points": [
+      "003",
+      "004"
+    ]
+  },
+  {
+    "id": "004",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "004",
+      "039"
+    ]
+  },
+  {
+    "id": "005",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "007",
+      "039"
+    ]
+  },
+  {
+    "id": "006",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "005",
+      "039"
+    ]
+  },
+  {
+    "id": "007",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "007",
+      "008"
+    ]
+  },
+  {
+    "id": "008",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "005",
+      "006"
+    ]
+  },
+  {
+    "id": "009",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "009",
+      "010"
+    ]
+  },
+  {
+    "id": "010",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "010",
+      "040"
+    ]
+  },
+  {
+    "id": "011",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "011",
+      "012"
+    ]
+  },
+  {
+    "id": "012",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "012",
+      "040"
+    ]
+  },
+  {
+    "id": "013",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "021",
+      "040"
+    ]
+  },
+  {
+    "id": "014",
+    "name": "电阻",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "021",
+      "022"
+    ]
+  },
+  {
+    "id": "015",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "022",
+      "023"
+    ]
+  },
+  {
+    "id": "016",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "023",
+      "024"
+    ]
+  },
+  {
+    "id": "017",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "013",
+      "014"
+    ]
+  },
+  {
+    "id": "018",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "015",
+      "026"
+    ]
+  },
+  {
+    "id": "019",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "026",
+      "041"
+    ]
+  },
+  {
+    "id": "020",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "014",
+      "041"
+    ]
+  },
+  {
+    "id": "021",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "025",
+      "041"
+    ]
+  },
+  {
+    "id": "022",
+    "name": "电阻",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "电阻",
+    "points": [
+      "025",
+      "026"
+    ]
+  },
+  {
+    "id": "023",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "026",
+      "027"
+    ]
+  },
+  {
+    "id": "024",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "027",
+      "028"
+    ]
+  },
+  {
+    "id": "025",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "017",
+      "018"
+    ]
+  },
+  {
+    "id": "026",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "019",
+      "020"
+    ]
+  },
+  {
+    "id": "027",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "020",
+      "042"
+    ]
+  },
+  {
+    "id": "028",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "018",
+      "042"
+    ]
+  },
+  {
+    "id": "029",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "029",
+      "042"
+    ]
+  },
+  {
+    "id": "030",
+    "name": "电阻",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "029",
+      "030"
+    ]
+  },
+  {
+    "id": "031",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "030",
+      "031"
+    ]
+  },
+  {
+    "id": "032",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "031",
+      "032"
+    ]
+  },
+  {
+    "id": "033",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "033",
+      "034"
+    ]
+  },
+  {
+    "id": "034",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "导线",
+    "points": [
+      "034",
+      "035"
+    ]
+  },
+  {
+    "id": "035",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "035",
+      "036"
+    ]
+  },
+  {
+    "id": "036",
+    "name": "导线",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "036",
+      "037"
+    ]
+  },
+  {
+    "id": "037",
+    "name": "刀闸",
+    "nickName": "nickName",
+    "type": 1,
+    "status": 1,
+    "desc": "刀闸开关",
+    "points": [
+      "037",
+      "038"
+    ]
+  }
+]

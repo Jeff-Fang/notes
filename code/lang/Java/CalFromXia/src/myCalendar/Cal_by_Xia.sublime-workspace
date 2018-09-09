@@ -1,0 +1,306 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"St",
+				"StdOut"
+			],
+			[
+				"phi",
+				"phi"
+			],
+			[
+				"I",
+				"I0L"
+			],
+			[
+				"U",
+				"U0L"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"ca",
+				"File: Close All"
+			],
+			[
+				"CA",
+				"Code Folding: Unfold All"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/JFrmbp/Repository/CalFromXia/src/myCalendar/AgendaDao.java",
+		"/Users/JFrmbp/Repository/CalFromXia/src/myCalendar/Cal_by_Xia.sublime-project",
+		"/Users/JFrmbp/Code/kata/hello/hello_asm.s",
+		"/Users/JFrmbp/Code/kata/hello/hello.swift",
+		"/Users/JFrmbp/Code/kata/hello/hello.py",
+		"/Users/JFrmbp/Code/kata/hello/hello.m",
+		"/Users/JFrmbp/code/kata/hello/Hello.java",
+		"/Users/JFrmbp/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/JFrmbp/code/kata/hello/hello.m",
+		"/Users/JFrmbp/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/JFrmbp/Repository/myblog/config.toml",
+		"/Users/JFrmbp/Repository/myblog/content/post/migrate-forte-to-swift3/migrate-forte-to-swift3.md",
+		"/Users/JFrmbp/Repository/myblog/themes/beautifulhugo/layouts/partials/header.html",
+		"/Users/JFrmbp/Repository/myblog/.gitignore",
+		"/Users/JFrmbp/Repository/mysite/config.toml",
+		"/Users/JFrmbp/Repository/mysite/content/test.md",
+		"/Users/JFrmbp/Repository/myblog/content/about.md",
+		"/Users/JFrmbp/Repository/mysite/content/about.md",
+		"/private/var/folders/_g/myz_3bx51yz6d5x68ds1sfdm0000gn/T/com.soulmen.ulysses3/e4776092a6924556aaea8facc7f7f8c0/198391a0cba24896b7315926cd6ea456/RichText/French Novel.ulss",
+		"/Users/JFrmbp/code/Algo/LCEx/README.md",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/EK0lMxBKRRw.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/EK0lMxBKRRw.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/EK0lMxBKRRw",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/7ldYR0Uis0I.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/7ldYR0Uis0I.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/h_EkzhX0D0I.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/c2LYTT-pIhQ.srt",
+		"/Users/JFrmbp/Desktop/try.html",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/jyju2P-7hPA.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/c2LYTT-pIhQ.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/Kwa_pmm4vqg.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/Kwa_pmm4vqg.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/whHOVlT9YUU.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/whHOVlT9YUU.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/vtiFi3WGecs.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/vtiFi3WGecs.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/yJ5ks1iPLIY.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/yJ5ks1iPLIY.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/dGmfwNCA3kM.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/dGmfwNCA3kM.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/3dU8i98_xCI.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/3dU8i98_xCI.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/ThF4jbVsfRo.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/ThF4jbVsfRo.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/JINJtljpmSE.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/JINJtljpmSE.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/ZGQNZ4LRhM4.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/74T_RfXJ9DQ.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/74T_RfXJ9DQ.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/YOOk7AQgBU0.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/YOOk7AQgBU0.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/3JLK1BtvStU.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/3JLK1BtvStU.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/R95j4RwIrZs.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/R95j4RwIrZs.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/MB6nv2erQ7w.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/MB6nv2erQ7w.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/Lvbk6vyhglY.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/en-us/OVeJU18ADmw.srt",
+		"/Users/JFrmbp/Repository/subtitles/locales/zh-cn/OVeJU18ADmw.srt",
+		"/Users/JFrmbp/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/Users/JFrmbp/Code/lang/Java/Person.java",
+		"/Users/JFrmbp/.zsh_profile",
+		"/Users/JFrmbp/Documents/MyDocument/MyFolder/Notes/Learnote/PythonForYouAndMe/DataStructures.md",
+		"/Users/JFrmbp/Code/improved.cpp",
+		"/Users/JFrmbp/Code/CodeRepo/sh/mysystem.sh",
+		"/Users/JFrmbp/Desktop/继电保护考点.md",
+		"/Users/JFrmbp/Code/CodeRepo/UsefulArrayFunctions.cpp",
+		"/Users/JFrmbp/Books/Developer/Apple:Swift:ObjC/Paul Hudson/objective-c-for-swift-developers/0/book-assets/project.css",
+		"/Users/JFrmbp/Code/Hello/hello_objc.m",
+		"/Users/JFrmbp/Code/Hello/hello_c.c",
+		"/Users/JFrmbp/Code/Hello/niceDay.c",
+		"/Users/JFrmbp/Code/Hello/hello_java.java",
+		"/Users/JFrmbp/Documents/Marboo/Snippet/电面准备.md",
+		"/Users/JFrmbp/Library/Containers/biz.marboo.Marboo/Data/Library/Application Support/Marboo/Documents/Library/Inbox/workLog_Mar31.md",
+		"/Users/JFrmbp/Library/Containers/biz.marboo.Marboo/Data/Library/Application Support/Marboo/Documents/.media/marboo_config.json",
+		"/Users/JFrmbp/Downloads/examples/ch01/initial/aliens/report.html",
+		"/Users/JFrmbp/Downloads/examples/ch01/final/aliens/style.css",
+		"/Users/JFrmbp/Downloads/examples/ch01/final/aliens/report.php",
+		"/Users/JFrmbp/Downloads/examples/ch01/final/aliens/report.html",
+		"/Users/JFrmbp/Code/GlowPuzzle/GlowPuzzle.c",
+		"/Users/JFrmbp/Code/Memo/showAllFiles.sh",
+		"/Users/JFrmbp/Documents/xcode/Checklists/Checklists/AppDelegate.swift",
+		"/Users/JFrmbp/Code/Assembly/8253.asm",
+		"/Users/JFrmbp/vimrc",
+		"/Users/JFrmbp/Documents/MATLAB/duanlu.m",
+		"/Users/JFrmbp/Desktop/Masaaki_Kishibe 岸部真明60首/Masaaki Kishibe - 雲の海.gp5",
+		"/Users/JFrmbp/Documents/MATLAB/第一次课堂记录.txt",
+		"/Users/JFrmbp/Downloads/wordpress/readme.html",
+		"/Users/JFrmbp/Code/Memo/compileObjC.sh",
+		"/Users/JFrmbp/Code/qkSort.c",
+		"/Users/JFrmbp/Code/javahere/Person.java",
+		"/Users/JFrmbp/Code/pgm/pgm.h",
+		"/Users/JFrmbp/Code/pgm/main.c",
+		"/Users/JFrmbp/Code/pgm/fct.c",
+		"/Users/JFrmbp/Code/pgm/wrt.c",
+		"/Users/JFrmbp/Code/makefile",
+		"/Users/JFrmbp/Code/printEnv.c",
+		"/Users/JFrmbp/Code/Hello/hello.c",
+		"/Users/JFrmbp/Code/Hello/hello.java",
+		"/Users/JFrmbp/Code/Hello/hello.m",
+		"/Users/JFrmbp/Code/Hello/hello.py",
+		"/Users/JFrmbp/Code/test.c",
+		"/Users/JFrmbp/Code/Webpage/jumpMenu.html",
+		"/Users/JFrmbp/vim/test.c"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"~/Code/kata/hello/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"movl",
+			"\n#",
+			"hello",
+			"import",
+			"property",
+			"site description",
+			"site-description",
+			"si te",
+			"udacity",
+			"google",
+			"youtube",
+			"apple",
+			"163",
+			"google",
+			"15",
+			"\n                        <div id=\"js_profile_qrcode\" class=\"profile_container\" style=\"display:none;\">\n                            <div class=\"profile_inner\">\n                                <strong class=\"profile_nickname\">Hopewriting</strong>\n                                <img class=\"profile_avatar\" id=\"js_profile_qrcode_img\" src=\"\" alt=\"\">\n\n                                <p class=\"profile_meta\">\n                                <label class=\"profile_meta_label\">微信号</label>\n                                <span class=\"profile_meta_value\">hopewrite</span>\n                                </p>\n\n                                <p class=\"profile_meta\">\n                                <label class=\"profile_meta_label\">功能介绍</label>\n                                <span class=\"profile_meta_value\">托福综合写作和独立写作复习攻略；&nbsp;托福以及美国大学写作的素材资料库；&nbsp;&nbsp;英文名著和畅销书的摘录；基础和强化班的课件参考。&nbsp;&nbsp;&nbsp;#教书育人、静心画画、开心生活#</span>\n                                </p>\n                                \n                            </div>\n                            <span class=\"profile_arrow_wrp\" id=\"js_profile_arrow_wrp\">\n                                <i class=\"profile_arrow arrow_out\"></i>\n                                <i class=\"profile_arrow arrow_in\"></i>\n                            </span>\n                        </div>\n                    </div>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"cbx",
+				"Cal_by_Xia.sublime-project"
+			],
+			[
+				"ad",
+				"AgendaDao.java"
+			],
+			[
+				"hm",
+				"hello/hello.m"
+			],
+			[
+				"",
+				"hello/Hello.java"
+			],
+			[
+				"hj",
+				"hello/Hello.java"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 156.0,
+	"status_bar_visible": true
+}

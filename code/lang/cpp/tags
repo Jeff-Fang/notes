@@ -1,0 +1,7 @@
+Mmain.cpp	main.cpp	/^main (void) $/
+MyClass	my_class.h	2
+g_num	main.cpp	5
+printMsg	main.cpp	/^printMsg (char ch) $/
+printMsg	my_class.cpp	/^printMsg (int i) $/
+printMsg	my_class.cpp	/^MyClass::printMsg (void) $/
+private	my_class.h	6

@@ -1,0 +1,54 @@
+%!TEX program = <xelatex>
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath,esint} %maths
+\usepackage{mathdots}
+%\usepackage{ctex}
+\usepackage{xeCJK}
+  \setCJKmainfont{Noto Sans CJK SC}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+\begin{align*}
+
+\text{比较法}&\quad \mathrm{if} 0 \leqslant u_n \leqslant v_n , \\
+    &\\begin{cases}
+      \sum v_n \text{收敛} \implies \sum _n \text{收敛}, \\
+      \sum u_n \text{发散} \implies \sum _n \text{发散}, \\
+    \end{cases} \\
+    &\text{可比较} \lim_{n \to \infty}\frac{u_n}{v_n}
+\text{比值法}&\quad \lim_{n \to \infty}\frac{u_n+1}{u_n} = \rho \begin{cases}
+  <1 ~ \Rightarrow \text{收敛}
+  >1 ~ \Rightarrow \text{发散}
+  =1 ~ \Rightarrow \text{无法判断}
+\end{cases}
+\text{根值法}&\quad \lim_{n \to \infty} \sqrt[n]{u_n} = \rho \begin{cases}
+  <1 ~ \Rightarrow \text{收敛}
+  >1 ~ \Rightarrow \text{发散}
+  =1 ~ \Rightarrow \text{无法判断}
+\end{cases}
+Hello?
+\end{align*}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

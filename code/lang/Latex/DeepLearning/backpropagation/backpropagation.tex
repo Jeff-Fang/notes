@@ -1,0 +1,67 @@
+%!TEX program = xelatex
+% This file can be compiled by XeLaTeX
+
+%% Head %%
+
+\documentclass[11pt]{article}
+% \documentclass[UTF8]{ctexart}
+\usepackage[a4paper,left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+% \usepackage{xeCJK}
+  % \setCJKmainfont{Songti SC}
+% \usepackage{ctex}     % Chinese TeX
+\usepackage{ulem}       % Underlines or Crossout
+\usepackage{amsmath}
+\usepackage{mathdots}
+\usepackage{multicol}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Merriweather}
+
+\parskip = 0.8em plus 1pt
+\parindent = 0pt
+
+
+%% Article %%
+
+\begin{document}
+  \title{Back Propagation \\ \large study note }
+  \author{J.F.}
+  \maketitle
+
+\section{Mechanism}
+  The deep learning mechanism is deeply influenced by neural network, in which model the neuron is the most basic component of the whole system. Accordingly, in deep learning, the neutron is used to emulate the neuron. To make the system capable of learning the very complex cases, several neutrons are combined to form a layer, and several layers together make up the whole network. A neutron is basically a homogeneous equation set, and the process of \textit{training} the neural network is actually finding the coefficient matrix of the neutron that minimize the output error. The whole process can be broke down in 2 parts - forward pass and backpropagation.
+
+  \subsection{Forward pass}
+    In forward pass, neutrons are using existing coefficient matrix, aka weights, to predict the output. Each neutron gets the input from the previous layer or input data, and then it calculates the homogeneous equation with existing coefficient, finally it maps the result to a reasonable range by activate function to match the domain of the next neutron.
+
+    An example of activate funtion is sigmoid function.
+
+    \begin{align}
+    \mathrm{sigmoid}(x) &= \frac{1}{1 + e^{-x}} \\
+    \mathrm{sigmoid}'(x) &= \mathrm{sigmoid}(x) \left[ 1 - \mathrm{sigmoid}(x) \right]
+    \end{align}
+
+  \subsection{Backpropagation}
+    The traning process is a loop of using the existing weights to forward calculating the prediction and backpropagate to revise each of the weights. To get the error of a specific weight, we need to calculate the derivative of the general output error. This is a multi-variable derivative problem, and there will be countless possible results, but not all of them are equally meaningful. We want to decrease the error as quickly as possible. Thus we should calculate its gradient. The thought of calculating the gradient and descend the error as quickly as possible is called \textit{Gradient Descend}.
+
+\section{Variables}
+  \begin{tabbing}
+    \bf{2 layers Formula} \hspace{5mm} \= \bf{implication} \hspace{30mm} \= \bf{Var Name} \\
+    $W$                            \> hidden-output weight      \> \tt{h2o\_weights} \\
+    $w$                            \> input-hidden weight       \> \tt{i2h\_weights} \\
+    $\eta$                         \> learning rate             \> \tt{lr}       \\
+    $x$                            \> input data                \> \tt{inputs} \\
+    $h = \Sigma_i w_i x_i$         \> signals into hidden layer \> \tt{hidden\_inputs} \\
+    $a = f_h(h)$                   \> signals from hidden layer \> \tt{hidden\_outputs} \\
+    $H = W \cdot a$                \> signals into final layer  \> \tt{final\_inputs} \\
+    $\hat{y} = f_f(H)$             \> signals from final layer  \> \tt{final\_outputs} \\
+    $E = y-\hat{y}$                \> output error              \> \tt{output\_err} \\
+    $G = f'_f(H)$                  \> output layer gradients    \> \tt{output\_grad} \\
+    $\delta^o = E G$               \> output layer error        \> \tt{output\_grad\_err} \\
+    $g = f'_h(h)$                  \> hidden layer gradients    \> \tt{hidden\_grad} \\
+    $\delta^h = W\delta^o g$       \> hidden unit error         \> \tt{hidden\_grad\_err} \\
+    $\Delta W = \eta \delta^o a$   \> hidden-output GD step     \> \tt{h2o\_weights\_step}\\
+    $\Delta w = \eta \delta^h x_i$ \> input-hidden GD step      \> \tt{i2h\_weights\_step} \\
+  \end{tabbing}
+
+\end{document}

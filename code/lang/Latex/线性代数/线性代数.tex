@@ -1,0 +1,117 @@
+%!TEX program = xelatex
+% This file can be compiled by XeLaTeX
+
+%% Head %%
+
+\documentclass[11pt]{ctexart}
+% \documentclass[UTF8]{ctexart}
+\usepackage[b5paper,left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{xeCJK}
+  % \setCJKmainfont{Noto Sans CJK SC}
+\usepackage{ctex}     % Chinese TeX
+\usepackage{ulem}       % Underlines or Crossout
+\usepackage{amsmath}
+\usepackage{mathdots}
+
+\setmainfont{Noto Sans}
+\parskip = 0.8em plus 1pt
+\parindent = 0pt
+
+%% Body %%
+
+\begin{document}
+
+\title{线性代数}
+\author{Jeff F.}
+\maketitle
+
+\section{行列式}
+
+\subsection{基本概念}
+
+\newcommand{\bdarrow}{\text{\fontspec{Noto Sans CJK SC Regular} ⇔ }}
+\begin{itemize}
+\item 逆序数
+\item $det(a_{ij}) ~ \bdarrow ~D~ \bdarrow \text{某行列式}$
+\end{itemize}
+
+\subsection{基本计算}
+
+三阶对角线法则：
+
+\begin{align*}
+&
+\begin{vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{vmatrix} \\
+ = \quad &a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} \\
+       - &a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31}
+\end{align*}
+
+n 阶行列式计算
+\[
+D = \begin{vmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{vmatrix}
+=
+\sum (-1)^t a_{1p_{1}} a_{2p_{2}} \dots a_{np_{n}}
+\]
+\emph{t为逆序数}
+
+% \begin{table}
+% \centering %necessary in order for the table to be centered
+% \caption{This is a LaTeX Table}
+% \begin{tabular}{lcr}
+% First  & $x^2+y^2$ & $\frac{a}{b}$ \\
+% Second & 0 & Table Cell \\
+% Third  & $y=\sqrt{(1-x^2)}$ & End
+% \end{tabular}
+% \end{table}
+
+对于二元线性方程组：
+\[
+\begin{cases}
+    a_{11}x_1 + a_{12}x_2 = b_1,\\
+    a_{21}x_1 + a_{22}x_2 = b_2.\\
+\end{cases}
+\]
+\[
+x_1 = \frac{D_1}{D} =
+    \frac{
+        \begin{vmatrix}
+            b_{1} & a_{12} \\
+            b_{2} & a_{22}
+        \end{vmatrix}
+    }{
+        \begin{vmatrix}
+            a_{11} & a_{12} \\
+            a_{21} & a_{22}
+        \end{vmatrix}
+    }
+,\quad
+x_2 = \frac{D_2}{D} =
+    \frac{
+        \begin{vmatrix}
+            a_{11} & b_{1} \\
+            a_{21} & b_{2}
+        \end{vmatrix}
+    }{
+        \begin{vmatrix}
+            a_{11} & a_{12} \\
+            a_{21} & a_{22}
+        \end{vmatrix}
+    }
+\]
+
+\section{矩阵}
+\section{线性相关性}
+\section{二次型}
+\section{线性空间与线性变换}
+
+
+\end{document}
