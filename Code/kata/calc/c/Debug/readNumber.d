@@ -1,0 +1,1 @@
+readNumber.d: ../readNumber.c

@@ -1,0 +1,1 @@
+isOperation.d: ../isOperation.c

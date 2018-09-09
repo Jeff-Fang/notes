@@ -1,0 +1,1 @@
+postFix.d: ../postFix.c
