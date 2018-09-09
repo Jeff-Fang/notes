@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MiR Rest API Test</title>
+  <script type="text/javascript">
+    function GetMiRName() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "http://34.253.221.65/status", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send();
+      var response = JSON.parse(xhttp.responseText);
+      var somevalue = "Data to be inserted";
+      document.write(somevalue);
+    }
+
+    function myFunction() {
+    document.getElementById("demo").style.color = "red";
+    }
+  </script>
+</head>
+<body>
+  <botton type="button" onclick="GetMiRName()">Get MiR Name</botton>
+  <p id="demo" onclick="myFunction()">Click me to change my text color.</p>
+</body>
+</html>

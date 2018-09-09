@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://54.171.172.151/ -->
+<html hc="a0" hcx="0" class="gr__54_171_172_151"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>MiR - FLEET CONTROL</title>
+  <link rel="stylesheet" type="text/css" href="./MiR - FLEET CONTROL_files/style.css">
+  <link rel="stylesheet" href="./MiR - FLEET CONTROL_files/map_style.css">
+  <script type="text/javascript" src="./MiR - FLEET CONTROL_files/jquery.min.js"></script>
+  <script type="text/javascript" src="./MiR - FLEET CONTROL_files/javascript.js"></script>
+  <script src="./MiR - FLEET CONTROL_files/fabric.js"></script>
+  <script src="./MiR - FLEET CONTROL_files/map.js"></script>
+  <script>
+  //Usually, you put script-tags into the head
+  function myFunction() {
+  //This performs a POST-Request.
+  //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+  //The Browser downloads the webpage from the given url, and returns the data.
+  $.post( "http://hostserver.com/MEApp/MEService", function( data ) {
+  //As soon as the browser finished downloading, this function is called.
+  $('#demo').html(data);
+  });
+  }
+  </script>
+</head>
+<body data-gr-c-s-loaded="true">
+  <div id="site-wrapper">
+    <div id="content">
+      <div class="box padded">
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <fieldset><legend>API Demo</legend></fieldset>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/orders/new" class="button xlarge">Button 1 </a></div></div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/favorites" class="button xlarge">Button 2</a></div></div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/orders" class="button xlarge">Orders view</a></div></div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/status" class="button xlarge">Fleet</a></div></div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/maps" class="button xlarge">Maps</a></div></div>
+          <div class="pure-u-1 pure-u-md-1-3 frontpage_button"><div><a href="http://54.171.172.151/lifts" class="button xlarge">Lifts</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
