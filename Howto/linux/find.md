@@ -1,5 +1,6 @@
 find /home/username/ -name "*.err"
 
+find . -type d -name .git
 
 Learn more in [here](http://www.binarytides.com/linux-find-command-examples/)
 
