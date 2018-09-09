@@ -72,7 +72,10 @@ git checkout [some_dir|file]
 git clean -fdx # WARNING: -x will also remove all ignored files!
 ```
 
-
+#### Remove cache for deleting nested .git folder
+```bash
+git rm --cached ./ -f
+```
 
 
 
