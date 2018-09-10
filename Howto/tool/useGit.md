@@ -61,7 +61,10 @@ git reset
 git reset --hard HEAD # (works from any subdirectory)
 git reset HEAD -- .
 git reset HEAD -- path/to/file
+git reset HEAD~
 ```
+[More about undo commits](https://stackoverflow.com/questions/927358/how-to-undo-the-most-recent-commits-in-git)
+
 #### Revert all local uncommitted changes (should be executed in repo root):
 ```bash
 git checkout .
