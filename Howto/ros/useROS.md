@@ -1,4 +1,21 @@
-# ROS linux commands
+# ROS CLI Cheatsheet
+
+## Basic ROS
+```bash
+roscore
+
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+
+rosnode list
+
+rostopic list
+rostopic info /turtle1/cmd_vel
+rostopic echo /turtle1/cmd_vel
+
+rosmsg info geometry_msgs/Twist
+rosed geometry_msgs Twist.msg
+```
 
 ## Catkin Workspaces
 ```bash
