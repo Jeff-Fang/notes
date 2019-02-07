@@ -19,6 +19,7 @@ rosed geometry_msgs Twist.msg
 
 ## Catkin Workspaces
 ```bash
+# Initialize workspace
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 catkin_init_workspace
@@ -35,6 +36,8 @@ roslaunch simple_arm robot_spawn.launch
 rosdep check simple_arm
 rosdep install -i simple_arm
 sudo apt-get install ros-kinetic-gazebo-ros-control
+
+# Create catkin package
 cd ~/catkin_ws/src
 # catkin_create_pkg <some_package_name> [dependency1 dependency2 ...]
 catkin_create_pkg first_package
