@@ -1,4 +1,4 @@
-
+```bash
 # BACKUP THIS FILE BEFORE CHANGING IT!
 # sudo cp /etc/apt/sources.list sources.list.bak
 
@@ -23,3 +23,4 @@ deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted univer
 # Canonical partner source  
 deb http://archive.canonical.com/ubuntu/ xenial partner  
 deb http://extras.ubuntu.com/ubuntu/ xenial main  
+```

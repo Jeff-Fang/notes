@@ -16,7 +16,7 @@
   * [Write ROS Nodes](Howto/ros/ros_node.md)
   * [ROS Cheatsheet](Howto/ros/useROS.md)
 * Linux
-  * [Change APT Source](Howto/linux/changeAptSource.sh)
+  * [Change APT Source](Howto/linux/changeAptSource.md)
   * [grep](Howto/linux/grep.md)
   * [Process Control](Howto/linux/processControl.md)
   * [ps](Howto/linux/ps.md)
