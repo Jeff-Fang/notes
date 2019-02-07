@@ -1,7 +1,7 @@
 # Summary
 
 * [Readme](README.md)
-* ToolHowto/tool/useLaTeX.md
+* Tool
   * [Compress PNG](Howto/tool/compressPNG.md)
   * [Conda](Howto/tool/useConda.md)
   * [FFmpeg](Howto/tool/useFFmpeg.mdown)
