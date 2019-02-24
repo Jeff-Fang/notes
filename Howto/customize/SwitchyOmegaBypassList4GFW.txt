@@ -1,31 +1,36 @@
-127.0.0.1
-::1
-localhost
-192.168.*
-*.cn
-cn.bing.com
-shimo.im
-*.baidu.com
-*.qq.com
-*.weiyun.com
-*.taobao.com
-*.tmall.com
-*.jd.com
-*.amap.com
-*.ctrip.com
-*.qunar.com
-*.fliggy.com
-*.bilibili.com
-*.youku.com
-*.zhihu.com
-*.weibo.com
-*.163.com
-*.126.com
-*.aliyun.com
-*.tencent.com
-*.oschina.net
-*.cocoachina.com
-*.cnblogs.com
-*.lagou.com
-*.douban.com
-*.ceair.com
+[SwitchyOmega Conditions]
+@with result
+
+127.0.0.1 +direct
+::1 +direct
+localhost +direct
+192.168.* +direct
+*.cn +direct
+cn.bing.com +direct
+*.shimo.im +direct
+*.baidu.com +direct
+*.qq.com +direct
+*.weiyun.com +direct
+*.taobao.com +direct
+*.tmall.com +direct
+*.jd.com +direct
+*.amap.com +direct
+*.ctrip.com +direct
+*.qunar.com +direct
+*.fliggy.com +direct
+*.bilibili.com +direct
+*.youku.com +direct
+*.zhihu.com +direct
+*.weibo.com +direct
+*.163.com +direct
+*.126.com +direct
+*.aliyun.com +direct
+*.tencent.com +direct
+*.oschina.net +direct
+*.cocoachina.com +direct
+*.cnblogs.com +direct
+*.lagou.com +direct
+*.douban.com +direct
+*.ceair.com +direct
+
+* +proxy
