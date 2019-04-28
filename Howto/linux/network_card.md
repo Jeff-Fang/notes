@@ -1,0 +1,1 @@
+sudo lshw -c network
