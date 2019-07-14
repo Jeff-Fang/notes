@@ -10,7 +10,7 @@
 #include <errno.h>
 #include <arpa/inet.h>
 
-int socket_connect(int argc, char *argv[])
+int socket_connect(int argc, char const *argv[])
 {
   int sockfd = 0, n = 0;
   char recvBuff[1024];
