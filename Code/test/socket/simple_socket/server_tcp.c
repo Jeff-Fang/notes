@@ -14,19 +14,21 @@ int main() {
 
   // specify an address for the socket
   struct sockaddr_in server_address, client_address;
-  server_address.sin_family = AF_INET;
-  server_address.sin_port = htons(10102);
-  //server_address.sin_addr.s_addr = htonl(INADDR_ANY);
-  server_address.sin_addr.s_addr = INADDR_ANY;
 
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+  server_address.sin_family = AF_INET;
+  server_address.sin_addr.s_addr = htonl(INADDR_ANY);
+  // server_address.sin_addr.s_addr = INADDR_ANY;
+  server_address.sin_port = htons(10102);
+
   // bind the socket to our specified IP and port
   if (bind(sockfd, (struct sockaddr*) &server_address, sizeof(server_address)) != 0) {
     printf("socket bind failed...\n");
     return -1;
   } else printf("socket successfully binded...\n");
 
-  if ((listen(sockfd, 5)) != 0) {
+  if (listen(sockfd, 5) != 0) {
     printf("Listen failed...\n");
     return -1;
   } else printf("server listening..\n");
@@ -44,16 +46,19 @@ int main() {
 
   // get msg from client
   char client_msg[25];
-  bzero(client_msg, sizeof(client_msg));
+  // bzero(client_msg, sizeof(client_msg));
+  bzero(client_msg, 25);
   // if (recv(connfd, &client_msg, sizeof(client_msg), 0) != 0) {
-  if (read(connfd, &client_msg, sizeof(client_msg)) != 0) {
-    printf("Error while receiving data.\n");
-    return -1;
-  } else printf("Data received. \n");
-  //int n = read(sockfd, client_msg, sizeof(client_msg));
+  read(connfd, &client_msg, sizeof(client_msg));
+  // if (read(connfd, &client_msg, sizeof(client_msg)) != 0) {
+  //   printf("Error while receiving data.\n");
+  //   return -1;
+  // } else printf("Data received. \n");
+  // int n = read(sockfd, client_msg, sizeof(client_msg));
   //if (n<0) printf("Error %d while reading data./n", n);
   // print client msg
   printf("The client sent: %s\n", client_msg);
+  printf("Server Existing...\n");
 
 
 

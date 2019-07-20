@@ -34,7 +34,7 @@ void func(int sockfd)
 int main()
 {
   int sockfd, connfd;
-  struct sockaddr_in servaddr, cli;
+  struct sockaddr_in server_address, client_address;
 
   // socket create and varification
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -44,15 +44,15 @@ int main()
   }
   else
     printf("Socket successfully created..\n");
-  bzero(&servaddr, sizeof(servaddr));
+  bzero(&server_address, sizeof(server_address));
 
   // assign IP, PORT
-  servaddr.sin_family = AF_INET;
-  servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-  servaddr.sin_port = htons(PORT);
+  server_address.sin_family = AF_INET;
+  server_address.sin_addr.s_addr = inet_addr("127.0.0.1");
+  server_address.sin_port = htons(PORT);
 
   // connect the client socket to server socket
-  if (connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr)) != 0) {
+  if (connect(sockfd, (struct sockaddr*) &server_address, sizeof(server_address)) != 0) {
     printf("connection with the server failed...\n");
     exit(0);
   }

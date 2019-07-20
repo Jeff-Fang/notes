@@ -45,8 +45,8 @@ void func(int sockfd)
 // Driver function
 int main()
 {
-  int sockfd, connfd, len;
-  struct sockaddr_in servaddr, cli;
+  int sockfd, connfd;
+  struct sockaddr_in server_address, client_address;
 
   // socket create and verification
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -56,38 +56,32 @@ int main()
   }
   else
     printf("Socket successfully created..\n");
-  bzero(&servaddr, sizeof(servaddr));
+  bzero(&server_address, sizeof(server_address));
 
   // assign IP, PORT
-  servaddr.sin_family = AF_INET;
-  servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-  servaddr.sin_port = htons(PORT);
+  server_address.sin_family = AF_INET;
+  server_address.sin_addr.s_addr = htonl(INADDR_ANY);
+  server_address.sin_port = htons(PORT);
 
   // Binding newly created socket to given IP and verification
-  if ((bind(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr))) != 0) {
+  if (bind(sockfd, (struct sockaddr*) &server_address, sizeof(server_address)) != 0) {
     printf("socket bind failed...\n");
     exit(0);
-  }
-  else
-    printf("Socket successfully binded..\n");
+  } else printf("Socket successfully binded..\n");
 
   // Now server is ready to listen and verification
-  if ((listen(sockfd, 5)) != 0) {
+  if (listen(sockfd, 5) != 0) {
     printf("Listen failed...\n");
     exit(0);
-  }
-  else
-    printf("Server listening..\n");
-  len = sizeof(cli);
-
+  } else printf("Server listening..\n");
+  
+  int len = sizeof(client_address);
   // Accept the data packet from client and verification
-  connfd = accept(sockfd, (struct sockaddr*)&cli, (socklen_t *) &len);
+  connfd = accept(sockfd, (struct sockaddr*) &client_address, (socklen_t *) &len);
   if (connfd < 0) {
     printf("server acccept failed...\n");
     exit(0);
-  }
-  else
-    printf("server acccept the client...\n");
+  } else printf("server acccept the client...\n");
 
   // Function for chatting between client and server
   func(connfd);
