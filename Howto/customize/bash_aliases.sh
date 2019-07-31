@@ -14,6 +14,9 @@ alias chrome='google-chrome'
 export desk=$HOME/Desktop
 export doc=$HOME/Documents
 
+export app=$HOME/Application
+  export venv=$app/venv
+
 export repo=$HOME/Repo
   export note=$repo/notes
     export howto=$note/Howto
