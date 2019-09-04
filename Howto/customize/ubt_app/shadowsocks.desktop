@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Shadowsocks
+GenericName=Shadowsocks-Qt5-x86_64
+Comment=Shadowsocks Qt Application
+Categories=Utility
+Keywords=Network;SS;GFW;Terminal=false
+StartupNotify=true
+MimeType=x-scheme-handler/mailto;
+Exec="/home/jeff/Application/Shadowsocks/Shadowsocks-Qt5-3.0.1-x86_64.AppImage" %u
+Icon=/home/jeff/Application/Shadowsocks/Shadowsocks_logo.png
