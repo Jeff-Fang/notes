@@ -1,0 +1,4 @@
+```bash
+date
+timedatectl
+```
