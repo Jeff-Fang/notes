@@ -8,6 +8,7 @@ git config --global user.email "pablo@email.com"
 git config --global credential.helper cache  # Use the git-credential-cache which by default stores the password for 15 minutes.
 git config --global credential.helper store
 git init
+git config --global core.editor "vim"
 ```
 #### Server
 ```bash
@@ -81,5 +82,11 @@ git clean -fdx # WARNING: -x will also remove all ignored files!
 git rm --cached ./ -f
 ```
 
+#### Move mistakenly committed files back to the staging area
+```bash
+git reset --soft HEAD~1
+git reset HEAD path/to/unwanted_file
+git commit -c ORIG_HEAD
+```
 
 
