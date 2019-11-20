@@ -1,15 +1,24 @@
 {
   "name": "helloelec",
   "version": "0.0.1",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "Jeff-Fang",
+  "author": "Jeff Fang",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^2.0.8"
-  }
+    "electron": "^2.0.18",
+    "electron-builder": "^21.2.0"
+  },
+  "build": {
+    "appId": "HelloElec",
+    "mac": {
+      "category": "Test"
+    }
+  },
+  "description": ""
 }
