@@ -3,6 +3,7 @@
 
 #include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
 #include <librealsense2/rs_advanced_mode.hpp>
+#include <librealsense2/rs_advanced_mode.h> // Defines STAEControl struct
 
 #include <fstream>              // File IO
 #include <iostream>             // Terminal IO
@@ -64,11 +65,28 @@ int main(int argc, char * argv[]) try
     // Configure camera options
     rs2::device selected_device = selected_profile.get_device();
 
+    // Configure settings in advanced mode
     if (selected_device.is<rs400::advanced_mode>()) {
         auto advanced_mode_dev = selected_device.as<rs400::advanced_mode>();
         if (!advanced_mode_dev.is_enabled()) {
             advanced_mode_dev.toggle_advanced_mode(true);
+            std::cout << "Activating advanced mode.\n";
+        } else {
+            std::cout << "Current device has advanced_mode activated already.\n";
         }
+
+        // Try out meanIntensitySetPoint in ae_control
+        // Referance: https://github.com/IntelRealSense/librealsense/blob/master/doc/rs400/rs400_advanced_mode.md
+        // Advance mode API defined in rs_advanced_mode.hpp
+        auto ae_control_group = advanced_mode_dev.get_ae_control();
+        std::cout << "1. meanIntensitySetPoint: " << ae_control_group.meanIntensitySetPoint << std::endl;
+
+        STAEControl ae_control_group2;
+        ae_control_group2.meanIntensitySetPoint = 300;
+        advanced_mode_dev.set_ae_control(ae_control_group2);
+
+        ae_control_group = advanced_mode_dev.get_ae_control();
+        std::cout << "2. meanIntensitySetPoint: " << ae_control_group.meanIntensitySetPoint << std::endl;
     } else {
         std::cout << "Current device doesn't support advanced mode!" << std::endl;
     }
@@ -85,7 +103,6 @@ int main(int argc, char * argv[]) try
         }
     }
 
-
     auto depth_sensor = selected_device.first<rs2::depth_sensor>();
     if (depth_sensor.supports(RS2_OPTION_EMITTER_ENABLED)) {
         depth_sensor.set_option(RS2_OPTION_EMITTER_ENABLED, 0.f); // Disable emitter
@@ -94,7 +111,6 @@ int main(int argc, char * argv[]) try
     {
         depth_sensor.set_option(RS2_OPTION_LASER_POWER, 0.f); // Disable laser
     }
-
 
     // Capture 30 frames to give autoexposure, etc. a chance to settle
     for (auto i = 0; i < 30; ++i) pipe.wait_for_frames();
