@@ -18,7 +18,7 @@ do
     # export ROS_IP=`echo $(hostname -I)`
     # export ROS_MASTER_URI=http://192.168.1.107:11311
     # export ROS_HOSTNAME=192.168.1.107
- 
+
     # Setting Gazebo Path
     if [ -f ~/.rosenv/set_gazebo_path.sh ]; then
         . ~/.rosenv/set_gazebo_path.sh
@@ -26,6 +26,7 @@ do
 
     # export TURTLEBOT3_MODEL=burger
 
+    echo "ROS Sourced!"
     break
 
   elif [ "$input_choice" = "n" ]; then
@@ -33,20 +34,20 @@ do
     # Setup conda
     # export PATH="/home/jeff/Application/anaconda3/bin:$PATH"
 
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/jeff/Application/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/jeff/Application/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/jeff/Application/anaconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/home/jeff/Application/anaconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
+    ## >>> conda initialize >>>
+    ## !! Contents within this block are managed by 'conda init' !!
+    #__conda_setup="$('/home/jeff/Application/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    #if [ $? -eq 0 ]; then
+    #    eval "$__conda_setup"
+    #else
+    #    if [ -f "/home/jeff/Application/anaconda3/etc/profile.d/conda.sh" ]; then
+    #        . "/home/jeff/Application/anaconda3/etc/profile.d/conda.sh"
+    #    else
+    #        export PATH="/home/jeff/Application/anaconda3/bin:$PATH"
+    #    fi
+    #fi
+    #unset __conda_setup
+    ## <<< conda initialize <<<
     break
   else
     echo "Warning: Not an acceptable option. Choose (y/n).                                  "

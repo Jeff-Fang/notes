@@ -211,7 +211,7 @@ syntax enable
 try
     "colorscheme ron
     "colorscheme darkblue
-    colorscheme desert
+    "colorscheme desert
     "colorscheme pablo
     "colorscheme elflord
     "colorscheme slate

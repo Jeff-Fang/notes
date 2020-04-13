@@ -1,3 +1,4 @@
+# TODO - Select OS
 # Mac
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias safari='open -a safari'
@@ -6,7 +7,7 @@ alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 
 # Ubuntu
-alias open='screen nautilus'
+alias open='nautilus'
 alias chrome='google-chrome'
 
 
@@ -26,15 +27,14 @@ export repo=$HOME/Repo
 
 export work=$HOME/Workspace
   export uda=$work/Udacity
+  export mir=$work/mir
 
 export nut=$HOME/Nutstore
   export nutmir=$nut/MiRFilesSync
   export nutdoc=$nut/Nutstore
     export backup=$nutdoc/Backup
+    export memo=$nutdoc/memo.md
 
-export mir=$HOME/MiRWorkspace
-  export mirdev=$mir/Dev
-  export mircf=$mir/CustomerFiles
 
 
 # Help fuction
