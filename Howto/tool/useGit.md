@@ -50,6 +50,7 @@ git add .
 #### Commit
 ```bash
 git commit -m "Initial Commit"
+git commit --amend
 ```
 #### Push
 ```bash

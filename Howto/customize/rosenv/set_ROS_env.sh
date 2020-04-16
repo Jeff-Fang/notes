@@ -29,7 +29,7 @@ do
     echo "ROS Sourced!"
     break
 
-  elif [ "$input_choice" = "n" ]; then
+  else
     echo "ROS *NOT* sourced!"
     # Setup conda
     # export PATH="/home/jeff/Application/anaconda3/bin:$PATH"
@@ -49,7 +49,5 @@ do
     #unset __conda_setup
     ## <<< conda initialize <<<
     break
-  else
-    echo "Warning: Not an acceptable option. Choose (y/n).                                  "
   fi
 done
