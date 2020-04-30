@@ -90,4 +90,7 @@ git reset HEAD path/to/unwanted_file
 git commit -c ORIG_HEAD
 ```
 
-
+### Review
+```bash
+git diff HEAD^ HEAD
+```
