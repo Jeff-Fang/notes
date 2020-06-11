@@ -28,6 +28,8 @@ export repo=$HOME/Repo
 export work=$HOME/Workspace
   export uda=$work/Udacity
   export mir=$work/mir
+  export mirdev=$work/mirdev
+    export mirlog=$mirdev/code/mirlog
 
 export nut=$HOME/Nutstore
   export nutmir=$nut/MiRFilesSync
@@ -45,7 +47,9 @@ function mark {
 alias sshaws='ssh -i $backup/server/AWS-EC2.pem'
 alias sshali='ssh -i $backup/server/AliMiRSim.pem'
 
-alias mirunzip='~/MiRWorkspace/Dev/MiR_unzip.bash'
+alias mirunzip='$mirlog/MiR_unzip.bash'
+alias mirchecklogs='$mirlog/checklog.bash'
+alias mirshowlogs='$mirlog/showlog.bash'
 
 # Ignore case
 # https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash

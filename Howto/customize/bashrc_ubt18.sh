@@ -132,6 +132,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # ROS
-if [ -f ~/.rosenv/set_ROS_env.sh ]; then
-    . ~/.rosenv/set_ROS_env.sh
-fi
+# if [ -f ~/.rosenv/set_ROS_env.sh ]; then
+#     . ~/.rosenv/set_ROS_env.sh
+# fi

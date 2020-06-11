@@ -94,3 +94,9 @@ git commit -c ORIG_HEAD
 ```bash
 git diff HEAD^ HEAD
 ```
+
+### Blame
+```bash
+git blame -L 10,+1 fe25b6d^ -- src/options.cpp
+```
+
