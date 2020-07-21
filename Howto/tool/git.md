@@ -90,6 +90,19 @@ git reset HEAD path/to/unwanted_file
 git commit -c ORIG_HEAD
 ```
 
+#### Redo reflog
+
+reflog is a log for `HEAD` changes.
+
+```bash
+git reflog
+git reset --hard <SHA>
+git reset HEAD@{x}
+```
+
+More info: https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
+
+
 ### Review
 ```bash
 git diff HEAD^ HEAD

@@ -135,3 +135,5 @@ unset __conda_setup
 # if [ -f ~/.rosenv/set_ROS_env.sh ]; then
 #     . ~/.rosenv/set_ROS_env.sh
 # fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -14,28 +14,31 @@ alias chrome='google-chrome'
 # Shortcut structure
 export desk=$HOME/Desktop
 export doc=$HOME/Documents
+    export memo=$doc/memo.md
+    export backup=$doc/Backup
+
 
 export app=$HOME/Application
   export venv=$app/venv
 
 export repo=$HOME/Repo
   export note=$repo/notes
+    export hostap=$repo/hostap
     export howto=$note/Howto
-    export code=$note/Code
-      export test=$code/test
-      export kata=$code/kata
+      export code=$note/Code
+        export test=$code/test
+        export kata=$code/kata
 
 export work=$HOME/Workspace
   export uda=$work/Udacity
   export mir=$work/mir
+  export mir2=$work/mir2
   export mirdev=$work/mirdev
     export mirlog=$mirdev/code/mirlog
 
 export nut=$HOME/Nutstore
   export nutmir=$nut/MiRFilesSync
   export nutdoc=$nut/Nutstore
-    export backup=$nutdoc/Backup
-    export memo=$nutdoc/memo.md
 
 
 
@@ -47,6 +50,7 @@ function mark {
 alias sshaws='ssh -i $backup/server/AWS-EC2.pem'
 alias sshali='ssh -i $backup/server/AliMiRSim.pem'
 
+source $mirlog/mir_log_unzip.bash
 alias mirunzip='$mirlog/MiR_unzip.bash'
 alias mirchecklogs='$mirlog/checklog.bash'
 alias mirshowlogs='$mirlog/showlog.bash'
