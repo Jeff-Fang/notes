@@ -163,9 +163,9 @@ endif
 call plug#end()
 
 
-" ============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Install plugins the first time vim runs
-" ============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
@@ -248,10 +248,39 @@ set whichwrap+=<,>,h,l
 " save as sudo
 ca w!! w !sudo tee "%"
 
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+"command W w !sudo tee % > /dev/null
+
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
+
+" The following script will save your settings on Vim exit, and load those settings
+" when you enter Vim again. The settings are associated (by this script) to the
+" directory from where you've started Vim.
+"function! MakeSession()
+"  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+"  if (filewritable(b:sessiondir) != 2)
+"    exe 'silent !mkdir -p ' b:sessiondir
+"    redraw!
+"  endif
+"  let b:filename = b:sessiondir . '/session.vim'
+"  exe "mksession! " . b:filename
+"endfunction
+"
+"function! LoadSession()
+"  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+"  let b:sessionfile = b:sessiondir . "/session.vim"
+"  if (filereadable(b:sessionfile))
+"    exe 'source ' b:sessionfile
+"  else
+"    echo "No session loaded."
+"  endif
+"endfunction
+"au VimEnter * nested :call LoadSession()
+"au VimLeave * :call MakeSession()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ => Theme, Look, Feel and Indicators
@@ -270,7 +299,7 @@ else
     colorscheme delek
 endif
 
-set background=dark
+"set background=dark
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
@@ -302,14 +331,14 @@ set fillchars+=vert:\
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" => Moving around, windows and buffers
+""" => Moving around, tabs and buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
 
 " Remap VIM 0 to first non-blank character
-map 0 ^
+"map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -347,17 +376,37 @@ endtry
 " Remember info about open buffers on close
 " set viminfo^=%
 
+" Quickly open a buffer for scribble
+map <leader>bx :e ~/buffer<cr>
+
+" Quickly open a markdown buffer for scribble
+map <leader>bmd :e ~/buffer.md<cr>
 
 " Useful mappings for managing tabs
-"==> tab mapping 1
-map <leader>tn :tabnew<cr>
+""==> tab mapping 1
+"map <leader>tn :tabnew<cr>
+"map <leader>to :tabonly<cr>
+"map <leader>tq :tabclose<cr>
+"map <leader>tm :tabmove
+"map <leader>t<leader> :tabnext<cr>
+"" Let 'tl' toggle between this and the last accessed tab
+"let g:lasttab = 1
+"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+"au TabLeave * let g:lasttab = tabpagenr()
+"
+"" Opens a new tab with the current buffer's path
+"" Super useful when editing files in the same directory
+"map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+"==> tab mapping 1.2
+map <leader>t :tabnew<cr>
 map <leader>to :tabonly<cr>
-map <leader>tq :tabclose<cr>
+map <leader>w :tabclose<cr>
 map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+map <leader><tab> :tabnext<cr>
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+nmap <Leader>t<tab> :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens a new tab with the current buffer's path
@@ -395,6 +444,7 @@ set wrap "Wrap lines
 set list
 "set lcs+=space:·
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol: ,precedes:«,extends:»
+" disable background color on whitespaces
 highlight SpecialKey ctermbg=none
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
@@ -419,7 +469,16 @@ set completeopt-=preview
 
 " autocompletion of files and commands behaves like shell
 " (complete only the common part, list the options that match)
+set wildmenu
 set wildmode=list:longest
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+else
+    set wildignore+=.git\*,.hg\*,.svn\*
+endif
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
@@ -448,14 +507,6 @@ nnoremap <silent> // :noh<CR>
 
 " For regular expressions turn magic on
 set magic
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-else
-    set wildignore+=.git\*,.hg\*,.svn\*
-endif
 
 " ============================================================================
 " => Visual mode related
@@ -494,8 +545,12 @@ let g:tagbar_autofocus = 1
 
 " ----------------------------- NERDTree -----------------------------
 
+" Open nerdtree from the beginning
+"autocmd VimEnter * NERDTree
+
 " toggle nerdtree display
 map <F3> :NERDTreeToggle<CR>
+
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
 " don;t show these file types
@@ -665,6 +720,11 @@ if fancy_symbols_enabled
 else
     let g:webdevicons_enable = 0
 endif
+
+
+" ----------------------------- Emmet ------------------------------
+" to avoid emmet mess around <C-y>
+let g:user_emmet_leader_key='<C-Z>'
 
 " ----------------------------- Custom configurations ----------------
 
