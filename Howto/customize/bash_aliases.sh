@@ -21,9 +21,11 @@ export doc=$HOME/Documents
 export app=$HOME/Application
   export venv=$app/venv
 
+export vm=$HOME/VMs
+
 export repo=$HOME/Repo
+  export hostap=$repo/hostap
   export note=$repo/notes
-    export hostap=$repo/hostap
     export howto=$note/Howto
       export code=$note/Code
         export test=$code/test
@@ -32,6 +34,7 @@ export repo=$HOME/Repo
 export work=$HOME/Workspace
   export uda=$work/Udacity
   export mir=$work/mir
+  export mirhostap=$work/hostap_mir
   export mir2=$work/mir2
   export mirdev=$work/mirdev
     export mirlog=$mirdev/code/mirlog
