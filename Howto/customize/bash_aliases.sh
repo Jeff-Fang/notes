@@ -2,8 +2,8 @@
 # Mac
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias safari='open -a safari'
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+#alias mysql=/usr/local/mysql/bin/mysql
+#alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 
 # Ubuntu
@@ -13,10 +13,10 @@ alias chrome='google-chrome'
 
 # Shortcut structure
 export desk=$HOME/Desktop
+export mirlog=$HOME/Downloads/mirlogs
 export doc=$HOME/Documents
     export memo=$doc/memo.md
     export backup=$doc/Backup
-
 
 export app=$HOME/Application
   export venv=$app/venv
@@ -24,7 +24,6 @@ export app=$HOME/Application
 export vm=$HOME/VMs
 
 export repo=$HOME/Repo
-  export hostap=$repo/hostap
   export note=$repo/notes
     export howto=$note/Howto
       export code=$note/Code
@@ -32,31 +31,26 @@ export repo=$HOME/Repo
         export kata=$code/kata
 
 export work=$HOME/Workspace
-  export uda=$work/Udacity
   export mir=$work/mir
-  export mirhostap=$work/hostap_mir
   export mir2=$work/mir2
-  export mirdev=$work/mirdev
-    export mirlog=$mirdev/code/mirlog
+  export mir3=$work/mir3
+  export tool=$work/tools
+  export mwf=$work/mir_wifi
+  export mwfhap=$mwf/mir_wifi_hostap
+  export mwfapi=$mwf/mir_wifi_api
+  export mwfctl=$mwf/mir_wifi_control
+  export mwftst=$mwf/mir_wifi_system_tests
 
-export nut=$HOME/Nutstore
-  export nutmir=$nut/MiRFilesSync
-  export nutdoc=$nut/Nutstore
 
-
-
-# Help fuction
+# Helper fuction
 function mark {
   export $1=$(pwd);
 }
 
-alias sshaws='ssh -i $backup/server/AWS-EC2.pem'
-alias sshali='ssh -i $backup/server/AliMiRSim.pem'
 
-source $mirlog/mir_log_unzip.bash
-alias mirunzip='$mirlog/MiR_unzip.bash'
-alias mirchecklogs='$mirlog/checklog.bash'
-alias mirshowlogs='$mirlog/showlog.bash'
+# Source scripts
+source $tool/code/mir_log_unzip.bash
+
 
 # Ignore case
 # https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash

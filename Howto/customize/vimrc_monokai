@@ -7,7 +7,7 @@
 " (if you aren't using one of those fonts, you will see funny characters here. 
 " Turst me, they look nice when using one of those fonts).
 
-let fancy_symbols_enabled = 1
+let fancy_symbols_enabled = 0
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf-8
@@ -73,40 +73,61 @@ endif
 
 " Override configs by directory
 Plug 'arielrossanigo/dir-configs-override.vim'
+
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
+
 " Better file browser
 Plug 'scrooloose/nerdtree'
+
 " Class/module browser
 Plug 'majutsushi/tagbar'
+
 " Search results counter
 Plug 'vim-scripts/IndexedSearch'
+
 " A couple of nice colorschemes
 " Plug 'fisadev/fisa-vim-colorscheme'
 Plug 'patstockwell/vim-monokai-tasty'
+
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Code and files fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 " Pending tasks list
 Plug 'fisadev/FixedTaskList.vim'
+
 " Async autocompletion
 if using_neovim && vim_plug_just_installed
     Plug 'Shougo/deoplete.nvim', {'do': ':autocmd VimEnter * UpdateRemotePlugins'}
 else
     Plug 'Shougo/deoplete.nvim'
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
 endif
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-" Python autocompletion
-Plug 'deoplete-plugins/deoplete-jedi'
+
+" Python Autocompletion
+"Plug 'deoplete-plugins/deoplete-jedi'
+
 " Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
+
 " Just to add the python go-to-definition and similar features, autocompletion
 " from this plugin is disabled
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
+"
+Plug 'dense-analysis/ale'
+
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'christoomey/vim-tmux-navigator'
+
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
 " Surround
@@ -295,6 +316,8 @@ if has('gui_running') || using_neovim || (&term =~? 'mlterm\|xterm\|xterm-256\|s
     colorscheme vim-monokai-tasty
     let g:airline_theme='monokai_tasty'
     hi Normal guibg=#2f343f
+    hi Normal ctermbg=none
+
 else
     colorscheme delek
 endif
@@ -341,16 +364,16 @@ map k gk
 "map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+" nmap <M-j> mz:m+<cr>`z
+" nmap <M-k> mz:m-2<cr>`z
+" vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+" vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -399,19 +422,19 @@ map <leader>bmd :e ~/buffer.md<cr>
 "map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 "==> tab mapping 1.2
-map <leader>t :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>w :tabclose<cr>
-map <leader>tm :tabmove
-map <leader><tab> :tabnext<cr>
+" map <leader>t :tabnew<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>w :tabclose<cr>
+" map <leader>tm :tabmove
+" map <leader><tab> :tabnext<cr>
 " Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>t<tab> :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
+" let g:lasttab = 1
+" nmap <Leader>t<tab> :exe "tabn ".g:lasttab<CR>
+" au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 "==> tab mapping 2
 "map tt :tabnew 
@@ -446,6 +469,8 @@ set list
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol: ,precedes:«,extends:»
 " disable background color on whitespaces
 highlight SpecialKey ctermbg=none
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
