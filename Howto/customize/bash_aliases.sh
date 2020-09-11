@@ -48,10 +48,6 @@ function mark {
 }
 
 
-# Source scripts
-source $tool/code/mir_log_unzip.bash
-
-
 # Ignore case
 # https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
 # If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it
