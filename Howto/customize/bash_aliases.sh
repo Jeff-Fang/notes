@@ -6,8 +6,8 @@ if [[ $(uname) == 'Darwin' ]]; then
   # alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 elif [[ $(uname) == 'Linux' ]]; then
   # echo "running on a linux"
-  alias open='nautilus'
-  alias chrome='google-chrome'
+  alias open='nautilus 1>/dev/null 2>/dev/null &'
+  alias chrome='google-chrome 1>/dev/null 2>/dev/null &'
 fi
 
 
