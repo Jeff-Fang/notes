@@ -1,14 +1,14 @@
-# TODO - Select OS
-# Mac
-alias chrome='open -a /Applications/Google\ Chrome.app'
-alias safari='open -a safari'
-#alias mysql=/usr/local/mysql/bin/mysql
-#alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-
-
-# Ubuntu
-alias open='nautilus'
-alias chrome='google-chrome'
+if [[ $(uname) == 'Darwin' ]]; then
+  # echo "running on a mac"
+  alias safari='open -a safari'
+  alias chrome='open -a /Applications/Google\ Chrome.app'
+  # alias mysql=/usr/local/mysql/bin/mysql
+  # alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+elif [[ $(uname) == 'Linux' ]]; then
+  # echo "running on a linux"
+  alias open='nautilus'
+  alias chrome='google-chrome'
+fi
 
 
 # Shortcut structure
