@@ -1,4 +1,0 @@
-dependency:
-
-    libsystemd-dev
-    pandoc
