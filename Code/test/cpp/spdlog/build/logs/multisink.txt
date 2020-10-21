@@ -1,0 +1,4 @@
+10/19/20 12:57:13 [thread 14525 ::]  warning  this should appear in both console and file
+10/19/20 12:57:13 [thread 14525 ::]     info  this message should not appear in the console, only in the file
+10/19/20 12:57:13 [thread 14525 main.cc:37:main]  warning  22222 this should appear in both console and file
+10/19/20 12:57:13 [thread 14525 main.cc:38:main]     info  22222 this message should not appear in the console, only in the file

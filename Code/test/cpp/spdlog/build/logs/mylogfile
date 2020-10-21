@@ -1,0 +1,4 @@
+[2020-10-19 09:56:34.116] [file_logger] [warning] this should appear in both console and file
+[2020-10-19 09:56:34.116] [file_logger] [info] this message should not appear in the console, only in the file
+[2020-10-19 09:57:33.002] [file_logger] [warning] this should appear in both console and file
+[2020-10-19 09:57:33.002] [file_logger] [info] this message should not appear in the console, only in the file
