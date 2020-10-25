@@ -1,0 +1,191 @@
+[global_config]
+  dbus = False
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#5f5f5f"
+  title_inactive_fg_color = "#888a85"
+  title_receive_bg_color = "#bf3f3f"
+  title_transmit_bg_color = "#5f87af"
+  title_transmit_fg_color = "#000000"
+[keybindings]
+  group_all = None
+  group_all_toggle = <Super>g
+  line_down = <Primary><Shift>Down
+  line_up = <Primary><Shift>Up
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  switch_to_tab_1 = None
+  switch_to_tab_10 = None
+  switch_to_tab_2 = None
+  switch_to_tab_3 = None
+  switch_to_tab_4 = None
+  switch_to_tab_5 = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[3+1]]
+    [[[child0]]]
+      fullscreen = True
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 2560, 1440
+      title = jfa@MiR-li-PF1P41X6-jfa: ~/Repo/hostap/tests/hwsim/vm
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None
+      last_active_term = 823ad6e8-7607-477b-8bd9-9093cbce49f1, 2d502ef6-53a9-4124-9a49-32cb4f9638a4
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 2000
+      ratio = 0.78339208774
+      type = HPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 773
+      ratio = 0.387468671679
+      type = HPaned
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 823ad6e8-7607-477b-8bd9-9093cbce49f1
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 343b8457-0bcb-489f-ae98-9c34151d2eae
+    [[[terminal6]]]
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 8b85a0b8-8729-4e69-ad4c-4f265f9afe39
+    [[[terminal7]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 2d502ef6-53a9-4124-9a49-32cb4f9638a4
+  [[New Layout]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 59:27
+      size = 2501, 1385
+      title = jfa@MiR-li-PF1P41X6-jfa: /sbin
+      type = Window
+    [[[child1]]]
+      active_page = 1
+      labels = None, None
+      last_active_term = 8e044d64-abe9-409f-992e-b126a3598ad6, 397f968b-6ecb-4d3c-8804-ba79bccf10a2
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 1796
+      ratio = 0.720128307939
+      type = HPaned
+    [[[child4]]]
+      order = 1
+      parent = child2
+      position = 674
+      ratio = 0.5
+      type = VPaned
+    [[[child7]]]
+      order = 1
+      parent = child1
+      position = 544
+      ratio = 0.218123496391
+      type = HPaned
+    [[[child8]]]
+      order = 0
+      parent = child7
+      position = 700
+      ratio = 0.519287833828
+      type = VPaned
+    [[[child9]]]
+      order = 0
+      parent = child8
+      position = 233
+      ratio = 0.335251798561
+      type = VPaned
+    [[[terminal10]]]
+      order = 0
+      parent = child9
+      profile = default
+      type = Terminal
+      uuid = 8d8ff4b5-4145-442e-9ae4-0b2dce759623
+    [[[terminal11]]]
+      order = 1
+      parent = child9
+      profile = default
+      type = Terminal
+      uuid = 490f6852-5a2a-4d36-baa9-e403d66b6b76
+    [[[terminal12]]]
+      order = 1
+      parent = child8
+      profile = default
+      type = Terminal
+      uuid = 838e1bf7-500e-46a5-b408-64c157d568e1
+    [[[terminal13]]]
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 397f968b-6ecb-4d3c-8804-ba79bccf10a2
+    [[[terminal3]]]
+      order = 0
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 8e044d64-abe9-409f-992e-b126a3598ad6
+    [[[terminal5]]]
+      order = 0
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = 32d6d990-9124-416b-b4a1-e836ad9aacb4
+    [[[terminal6]]]
+      order = 1
+      parent = child4
+      profile = default
+      type = Terminal
+      uuid = dc6fc0af-c60d-455f-adde-05633b56fee5
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#2f343f"
+    cursor_color = "#aaaaaa"
+    font = UbuntuMono Nerd Font Mono 13
+    foreground_color = "#eeeeec"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#ad7fa8:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollbar_position = hidden
+    use_system_font = False
+  [[Light]]
+    background_color = "#fdf6e3"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#657b83"
+    palette = "#fbf1c7:#cc241d:#98971a:#d79921:#458588:#b16286:#73d216:#7c6f64:#928374:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#3c3836"
