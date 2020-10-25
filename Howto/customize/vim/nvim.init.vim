@@ -2,6 +2,10 @@
 " http://vim.fisadev.com
 " version: 12.0.1
 
+" Install the required dependencies:
+" sudo apt install git curl python3-pip exuberant-ctags ack-grep
+" sudo pip3 install pynvim flake8 pylint isort
+
 " To use fancy symbols wherever possible, change this setting from 0 to 1
 " and use a font from https://github.com/ryanoasis/nerd-fonts in your terminal 
 " (if you aren't using one of those fonts, you will see funny characters here. 
