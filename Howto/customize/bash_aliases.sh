@@ -35,8 +35,8 @@ export repo=$HOME/Repo
 
 export work=$HOME/Workspace
   export mir=$work/mir
-  export mir2=$work/mir2
-  export mir3=$work/mir3
+  export mir2=$work/mirws2/mir
+  export mir3=$work/mirws3/mir
   export tool=$work/tools
   export mwf=$work/mir_wifi
   export mwfhap=$mwf/mir_wifi_hostap
