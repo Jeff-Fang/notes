@@ -1,4 +1,4 @@
-" Fisa-vim-config, a config for both Vim and NeoVim
+"o Fisa-vim-config, a config for both Vim and NeoVim
 " http://vim.fisadev.com
 " version: 12.0.1
 
@@ -99,8 +99,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 
 " Pending tasks list
 Plug 'fisadev/FixedTaskList.vim'
@@ -159,7 +159,7 @@ Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " Yank history navigation
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 " Linters
 Plug 'neomake/neomake'
 " Relative numbering of lines (0 is the current line)
@@ -513,8 +513,8 @@ else
 endif
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+" map <space> /
+" map <c-space> ?
 
 " Ignore case when searching
 set ignorecase
@@ -631,27 +631,29 @@ let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
 let g:neomake_virtualtext_current_error = 0
 
 " ----------------------------- Fzf ------------------------------
+"nmap ,e :FZF<CR>
+nmap <C-p> :FZF<CR>
 
-" file finder mapping
-nmap ,e :Files<CR>
-" tags (symbols) in current file finder mapping
-nmap ,g :BTag<CR>
-" the same, but with the word under the cursor pre filled
-nmap ,wg :execute ":BTag " . expand('<cword>')<CR>
-" tags (symbols) in all files finder mapping
-nmap ,G :Tags<CR>
-" the same, but with the word under the cursor pre filled
-nmap ,wG :execute ":Tags " . expand('<cword>')<CR>
-" general code finder in current file mapping
-nmap ,f :BLines<CR>
-" the same, but with the word under the cursor pre filled
-nmap ,wf :execute ":BLines " . expand('<cword>')<CR>
-" general code finder in all files mapping
-nmap ,F :Lines<CR>
-" the same, but with the word under the cursor pre filled
-nmap ,wF :execute ":Lines " . expand('<cword>')<CR>
-" commands finder mapping
-nmap ,c :Commands<CR>
+"" file finder mapping
+"nmap ,e :Files<CR>
+"" tags (symbols) in current file finder mapping
+"nmap ,g :BTag<CR>
+"" the same, but with the word under the cursor pre filled
+"nmap ,wg :execute ":BTag " . expand('<cword>')<CR>
+"" tags (symbols) in all files finder mapping
+"nmap ,G :Tags<CR>
+"" the same, but with the word under the cursor pre filled
+"nmap ,wG :execute ":Tags " . expand('<cword>')<CR>
+"" general code finder in current file mapping
+"nmap ,f :BLines<CR>
+"" the same, but with the word under the cursor pre filled
+"nmap ,wf :execute ":BLines " . expand('<cword>')<CR>
+"" general code finder in all files mapping
+"nmap ,F :Lines<CR>
+"" the same, but with the word under the cursor pre filled
+"nmap ,wF :execute ":Lines " . expand('<cword>')<CR>
+"" commands finder mapping
+"nmap ,c :Commands<CR>
 
 " ----------------------------- Deoplete -----------------------------
 
@@ -716,16 +718,16 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 "  mode)
 let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
-" ----------------------------- Yankring -------------------------------
-
-if using_neovim
-    let g:yankring_history_dir = '~/.config/nvim/'
-    " Fix for yankring and neovim problem when system has non-text things
-    " copied in clipboard
-    let g:yankring_clipboard_monitor = 0
-else
-    let g:yankring_history_dir = '~/.vim/dirs/'
-endif
+"" ----------------------------- Yankring -------------------------------
+"
+"if using_neovim
+"    let g:yankring_history_dir = '~/.config/nvim/'
+"    " Fix for yankring and neovim problem when system has non-text things
+"    " copied in clipboard
+"    let g:yankring_clipboard_monitor = 0
+"else
+"    let g:yankring_history_dir = '~/.vim/dirs/'
+"endif
 
 " ----------------------------- Airline ------------------------------
 
