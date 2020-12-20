@@ -17,11 +17,11 @@ enum cellStatus {
     case r,b,x
     func c() -> Character {
         switch self {
-        case r:
+        case .r:
             return "0"
-        case b:
+        case .b:
             return "1"
-        case x:
+        case .x:
             return "X"
         }
     }
@@ -31,13 +31,13 @@ enum direction {
     case up, down, left, right
     func c() -> Character{
         switch self {
-        case up:
+        case .up:
             return "U"
-        case down:
+        case .down:
             return "D"
-        case left:
+        case .left:
             return "L"
-        case right:
+        case .right:
             return "R"
         }
     }
@@ -79,31 +79,35 @@ func ==(lhs: Map, rhs: Map) -> Bool {
     return true
 }
 
-let start = Map(withTable: [[.x, .r, .b, .b],
+let start = Map(withTable: [
+    [.x, .r, .b, .b],
     [.r, .r, .b, .b],
     [.r, .r, .b, .b],
     [.r, .r, .b, .b]])
 
-let start2 = Map(withTable: [[.r, .r, .b, .b],
+let start2 = Map(withTable: [
+    [.r, .r, .b, .b],
     [.r, .b, .b, .b],
     [.r, .x, .r, .b],
     [.r, .r, .b, .b]])
 
-let finish = Map(withTable: [[.x, .b, .r, .b],
+let finish = Map(withTable: [
+    [.x, .b, .r, .b],
     [.b, .r, .b, .r],
     [.r, .b, .r, .b],
     [.b, .r, .b, .r]])
 
-let testMap = Map(withTable: [[.r, .b, .r, .b],
+let testMap = Map(withTable: [
+    [.r, .b, .r, .b],
     [.b, .r, .b, .r],
     [.r, .b, .r, .b],
     [.b, .r, .b, .x]])
 
-let testMap2 = Map(withTable: [[.r, .b, .r, .b],
+let testMap2 = Map(withTable: [
+    [.r, .b, .r, .b],
     [.b, .r, .b, .r],
     [.r, .b, .r, .b],
     [.b, .r, .b, .x]])
-
 
 
 if testMap == testMap2 {
@@ -134,28 +138,28 @@ func moveWhiteCellIn(map: Map, to: direction) -> Map {
     case .up:
         if map.whiteCellPosition.0 != 0 {
             let targetPst = (map.whiteCellPosition.0 - 1, map.whiteCellPosition.1)
-            return move(map, toTarget: targetPst)
+            return move(map: map, toTarget: targetPst)
         } else {
             return map
         }
     case .down:
         if map.whiteCellPosition.0 != 3 {
             let targetPst = (map.whiteCellPosition.0 + 1, map.whiteCellPosition.1)
-            return move(map, toTarget: targetPst)
+            return move(map: map, toTarget: targetPst)
         } else {
             return map
         }
     case .right:
         if map.whiteCellPosition.1 != 3 {
             let targetPst = (map.whiteCellPosition.0, map.whiteCellPosition.1 + 1)
-            return move(map, toTarget: targetPst)
+            return move(map: map, toTarget: targetPst)
         } else {
             return map
         }
     case .left:
         if map.whiteCellPosition.1 != 0 {
             let targetPst = (map.whiteCellPosition.0, map.whiteCellPosition.1 - 1)
-            return move(map, toTarget: targetPst)
+            return move(map: map, toTarget: targetPst)
         } else {
             return map
         }
@@ -163,8 +167,8 @@ func moveWhiteCellIn(map: Map, to: direction) -> Map {
 }
 
 print(testMap.whiteCellPosition)
-testMap.cellsInfo
-moveWhiteCellIn(testMap, to: .left).cellsInfo
+// testMap.cellsInfo
+// moveWhiteCellIn(map: testMap, to: .left).cellsInfo
 
 func mapsEqual (a: Map, b: Map) -> Bool {
     for i in 0...3 {
@@ -196,12 +200,13 @@ func solver() {
 func testQ() {
     let map = opQ[0]
     //    print("*** evel = \(map.level)")
-    print("\(rowNum++) - \(map.routine)")
+    print("\(rowNum) - \(map.routine)")
+    rowNum += 1
     
     //    printMap(map)
     if mapIDLog.contains(map.mapID) {
         //        print("*** contains!")
-        opQ.removeAtIndex(0)
+        opQ.remove(at: 0)
         testQ()
         return
     }
@@ -215,8 +220,8 @@ func testQ() {
         return
     }
     
-    appendQForMap(map, withRoute: map.routine)
-    opQ.removeAtIndex(0)
+    appendQForMap(map: map, withRoute: map.routine)
+    opQ.remove(at: 0)
     //    print("********** Exit Level \(map.level) **********")
 }
 
@@ -224,10 +229,10 @@ func appendQForMap(map: Map, withRoute route: String) {
 //    print ("appendQForMap \(route)")
 //    printMap(map)
     
-    var stepR = moveWhiteCellIn(map, to: .right)
-    var stepD = moveWhiteCellIn(map, to: .down)
-    var stepL = moveWhiteCellIn(map, to: .left)
-    var stepU = moveWhiteCellIn(map, to: .up)
+    var stepR = moveWhiteCellIn(map: map, to: .right)
+    var stepD = moveWhiteCellIn(map: map, to: .down)
+    var stepL = moveWhiteCellIn(map: map, to: .left)
+    var stepU = moveWhiteCellIn(map: map, to: .up)
     
     stepR.level += 1
     stepD.level += 1
