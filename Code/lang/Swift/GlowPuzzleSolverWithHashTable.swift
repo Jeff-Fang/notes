@@ -16,11 +16,11 @@ enum cellStatus {
     case r,b,x
     func c() -> Character {
         switch self {
-        case r:
+        case .r:
             return "0"
-        case b:
+        case .b:
             return "1"
-        case x:
+        case .x:
             return "X"
         }
     }
@@ -30,13 +30,13 @@ enum direction {
     case up, down, left, right
     func c() -> Character{
         switch self {
-        case up:
+        case .up:
             return "U"
-        case down:
+        case .down:
             return "D"
-        case left:
+        case .left:
             return "L"
-        case right:
+        case .right:
             return "R"
         }
     }
@@ -62,8 +62,8 @@ struct Map {
         }
         whiteCellPosition = position
         
-        let whiteCellLocation = mapString.rangeOfString("X")?.startIndex
-        mapString.removeAtIndex(whiteCellLocation!)
+        let range: Range<String.Index> = mapString.range(of: "X")!
+        mapString.remove(at: range.lowerBound)
         
         let wCellHash: Int = position.0 * 4 + position.1
         let tbHash = Int(mapString, radix: 2)
@@ -118,28 +118,28 @@ func moveWhiteCellIn(map: Map, to: direction) -> Map {
     case .up:
         if map.whiteCellPosition.0 != 0 {
             let targetPst = (map.whiteCellPosition.0 - 1, map.whiteCellPosition.1)
-            return move(map, toTargetPosition: targetPst)
+            return move(map: map, toTargetPosition: targetPst)
         } else {
             return map
         }
     case .down:
         if map.whiteCellPosition.0 != 3 {
             let targetPst = (map.whiteCellPosition.0 + 1, map.whiteCellPosition.1)
-            return move(map, toTargetPosition: targetPst)
+            return move(map: map, toTargetPosition: targetPst)
         } else {
             return map
         }
     case .right:
         if map.whiteCellPosition.1 != 3 {
             let targetPst = (map.whiteCellPosition.0, map.whiteCellPosition.1 + 1)
-            return move(map, toTargetPosition: targetPst)
+            return move(map: map, toTargetPosition: targetPst)
         } else {
             return map
         }
     case .left:
         if map.whiteCellPosition.1 != 0 {
             let targetPst = (map.whiteCellPosition.0, map.whiteCellPosition.1 - 1)
-            return move(map, toTargetPosition: targetPst)
+            return move(map: map, toTargetPosition: targetPst)
         } else {
             return map
         }
@@ -158,7 +158,7 @@ func move(map: Map, toTargetPosition target:(Int, Int)) -> Map {
 // MARK: - MainLogic
 
 // 2^19 = 524288, the largest hash number
-var mapHashTable = [Bool](count:524288, repeatedValue: false)
+var mapHashTable = [Bool](repeating: false, count:524288)
 
 
 var opQ: [Map] = [start]
@@ -179,7 +179,7 @@ func testQ() {
     print("\(rowNum) - \(map.routine)")
     
     if mapHashTable[map.mapID] {
-        opQ.removeAtIndex(0)
+        opQ.remove(at: 0)
         return
     }
     
@@ -192,15 +192,15 @@ func testQ() {
         return
     }
     
-    appendNext2QForMap(map, withRoute: map.routine)
-    opQ.removeAtIndex(0)
+    appendNext2QForMap(map: map, withRoute: map.routine)
+    opQ.remove(at: 0)
 }
 
 func appendNext2QForMap(map: Map, withRoute route: String) {
-    var stepR = moveWhiteCellIn(map, to: .right)
-    var stepD = moveWhiteCellIn(map, to: .down)
-    var stepL = moveWhiteCellIn(map, to: .left)
-    var stepU = moveWhiteCellIn(map, to: .up)
+    var stepR = moveWhiteCellIn(map: map, to: .right)
+    var stepD = moveWhiteCellIn(map: map, to: .down)
+    var stepL = moveWhiteCellIn(map: map, to: .left)
+    var stepU = moveWhiteCellIn(map: map, to: .up)
     
     if stepL != map {
         stepL.routine = route
