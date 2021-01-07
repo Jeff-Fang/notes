@@ -1,0 +1,14 @@
+[Unit]
+Description=ROT13 demo service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=jfa
+ExecStart=/usr/bin/env php /home/jfa/Repo/notes/Code/kata/rot13/server.php
+
+[Install]
+WantedBy=multi-user.target

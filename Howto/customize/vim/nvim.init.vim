@@ -1,4 +1,4 @@
-"o Fisa-vim-config, a config for both Vim and NeoVim
+" Fisa-vim-config, a config for both Vim and NeoVim
 " http://vim.fisadev.com
 " version: 12.0.1
 
@@ -23,42 +23,6 @@ set ffs=unix,dos,mac
 let using_neovim = has('nvim')
 let using_vim = !using_neovim
 
-
-" ============================================================================
-" Vim-plug initialization
-" Avoid modifying this section, unless you are very sure of what you are doing
-" ============================================================================
-
-let vim_plug_just_installed = 0
-if using_neovim
-    let vim_plug_path = expand('~/.config/nvim/autoload/plug.vim')
-else
-    let vim_plug_path = expand('~/.vim/autoload/plug.vim')
-endif
-if !filereadable(vim_plug_path)
-    echo "Installing Vim-plug..."
-    echo ""
-    if using_neovim
-        silent !mkdir -p ~/.config/nvim/autoload
-        silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    else
-        silent !mkdir -p ~/.vim/autoload
-        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    endif
-    let vim_plug_just_installed = 1
-endif
-
-" manually load vim-plug the first time
-if vim_plug_just_installed
-    :execute 'source '.fnameescape(vim_plug_path)
-endif
-
-" Obscure hacks done, you can now modify the rest of the config down below 
-" as you wish :)
-" IMPORTANT: some things in the config are vim or neovim specific. It's easy 
-" to spot, they are inside `if using_vim` or `if using_neovim` blocks.
-
-
 " ============================================================================
 " Active plugins
 " You can disable or add new ones here:
@@ -79,16 +43,16 @@ endif
 Plug 'arielrossanigo/dir-configs-override.vim'
 
 " Code commenter
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree'
 
 " Class/module browser
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " Search results counter
-Plug 'vim-scripts/IndexedSearch'
+" Plug 'vim-scripts/IndexedSearch'
 
 " A couple of nice colorschemes
 " Plug 'fisadev/fisa-vim-colorscheme'
@@ -100,26 +64,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Code and files fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-
-" Pending tasks list
-Plug 'fisadev/FixedTaskList.vim'
-
-" Async autocompletion
-if using_neovim && vim_plug_just_installed
-    Plug 'Shougo/deoplete.nvim', {'do': ':autocmd VimEnter * UpdateRemotePlugins'}
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
-        \ }
-endif
-
-" Python Autocompletion
-"Plug 'deoplete-plugins/deoplete-jedi'
-
-" Completion from other opened files
 Plug 'Shougo/context_filetype.vim'
 
 " Just to add the python go-to-definition and similar features, autocompletion
@@ -128,8 +72,8 @@ Plug 'Shougo/context_filetype.vim'
 "
 Plug 'dense-analysis/ale'
 
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Automatically close parenthesis, etc
@@ -137,23 +81,23 @@ Plug 'Townk/vim-autoclose'
 " Surround
 Plug 'tpope/vim-surround'
 " Indent text object
-Plug 'michaeljsmith/vim-indent-object'
+" Plug 'michaeljsmith/vim-indent-object'
 " Indentation based movements
-Plug 'jeetsukumaran/vim-indentwise'
+" Plug 'jeetsukumaran/vim-indentwise'
 " Better language packs
 Plug 'sheerun/vim-polyglot'
 " Ack code search (requires ack installed in the system)
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 " Paint css colors with the real color
 Plug 'lilydjwg/colorizer'
 " Window chooser
 Plug 't9md/vim-choosewin'
 " Automatically sort python imports
-Plug 'fisadev/vim-isort'
+" Plug 'fisadev/vim-isort'
 " Highlight matching html tags
 Plug 'valloric/MatchTagAlways'
 " Generate html in a simple way
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 " Git integration
 Plug 'tpope/vim-fugitive'
 " Git/mercurial/others diff icons on the side of the file lines
@@ -161,7 +105,7 @@ Plug 'mhinz/vim-signify'
 " Yank history navigation
 " Plug 'vim-scripts/YankRing.vim'
 " Linters
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 " Relative numbering of lines (0 is the current line)
 " (disabled by default because is very intrusive and can't be easily toggled
 " on/off. When the plugin is present, will always activate the relative
@@ -170,14 +114,7 @@ Plug 'neomake/neomake'
 " Plug 'myusuf3/numbers.vim'
 
 " Nice icons in the file explorer and file type status line.
-Plug 'ryanoasis/vim-devicons'
-
-if using_vim
-    " Consoles as buffers (neovim has its own consoles as buffers)
-    Plug 'rosenfeld/conque-term'
-    " XML/HTML tags navigation (neovim has its own)
-    Plug 'vim-scripts/matchit.zip'
-endif
+" Plug 'ryanoasis/vim-devicons'
 
 " Code searcher. If you enable it, you should also configure g:hound_base_url 
 " and g:hound_port, pointing to your hound instance
@@ -187,65 +124,6 @@ endif
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Install plugins the first time vim runs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if vim_plug_just_installed
-    echo "Installing Bundles, please ignore key map error messages"
-    :PlugInstall
-endif
-
-
-" ============================================================================
-" Vim settings and mappings
-" You can edit them as you wish
-" ============================================================================
- 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" => A bunch of things that are set by default in neovim, but not in vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if using_vim
-
-
-    " no vi-compatible
-    set nocompatible
-
-    " allow plugins by file type (required for plugins!)
-    filetype plugin on
-    filetype indent on
-
-    " always show status bar
-    set ls=2
-
-    " incremental search
-    set incsearch
-    " highlighted search results
-    set hlsearch
-
-    " syntax highlight on
-    syntax on
-
-    " better backup, swap and undos storage for vim (nvim has nice ones by
-    " default)
-    set directory=~/.vim/dirs/tmp     " directory to place swap files in
-    set backup                        " make backup files
-    set backupdir=~/.vim/dirs/backups " where to put backup files
-    set undofile                      " persistent undos - undo after you re-open the file
-    set undodir=~/.vim/dirs/undos
-    set viminfo+=n~/.vim/dirs/viminfo
-    " create needed directories if they don't exist
-    if !isdirectory(&backupdir)
-        call mkdir(&backupdir, "p")
-    endif
-    if !isdirectory(&directory)
-        call mkdir(&directory, "p")
-    endif
-    if !isdirectory(&undodir)
-        call mkdir(&undodir, "p")
-    endif
-end
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,48 +142,13 @@ endif
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-" The <Leader> key is mapped to \ by default.
-"let mapleader = ","
-"let g:mapleader = ","
-
 " save as sudo
 ca w!! w !sudo tee "%"
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-"command W w !sudo tee % > /dev/null
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
-
-" The following script will save your settings on Vim exit, and load those settings
-" when you enter Vim again. The settings are associated (by this script) to the
-" directory from where you've started Vim.
-"function! MakeSession()
-"  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
-"  if (filewritable(b:sessiondir) != 2)
-"    exe 'silent !mkdir -p ' b:sessiondir
-"    redraw!
-"  endif
-"  let b:filename = b:sessiondir . '/session.vim'
-"  exe "mksession! " . b:filename
-"endfunction
-"
-"function! LoadSession()
-"  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
-"  let b:sessionfile = b:sessiondir . "/session.vim"
-"  if (filereadable(b:sessionfile))
-"    exe 'source ' b:sessionfile
-"  else
-"    echo "No session loaded."
-"  endif
-"endfunction
-"au VimEnter * nested :call LoadSession()
-"au VimLeave * :call MakeSession()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ => Theme, Look, Feel and Indicators
@@ -367,21 +210,6 @@ set fillchars+=vert:\
 map j gj
 map k gk
 
-" Remap VIM 0 to first non-blank character
-"map 0 ^
-
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-" nmap <M-j> mz:m+<cr>`z
-" nmap <M-k> mz:m-2<cr>`z
-" vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-" vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" Smart way to move between windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
@@ -398,57 +226,11 @@ try
 catch
 endtry
 
-" Return to last edit position when opening files (You want this!)
-" autocmd BufReadPost *
-"      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"      \   exe "normal! g`\"" |
-"      \ endif
-" Remember info about open buffers on close
-" set viminfo^=%
-
 " Quickly open a buffer for scribble
 map <leader>bx :e ~/buffer<cr>
 
 " Quickly open a markdown buffer for scribble
 map <leader>bmd :e ~/buffer.md<cr>
-
-" Useful mappings for managing tabs
-""==> tab mapping 1
-"map <leader>tn :tabnew<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tq :tabclose<cr>
-"map <leader>tm :tabmove
-"map <leader>t<leader> :tabnext<cr>
-"" Let 'tl' toggle between this and the last accessed tab
-"let g:lasttab = 1
-"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-"au TabLeave * let g:lasttab = tabpagenr()
-"
-"" Opens a new tab with the current buffer's path
-"" Super useful when editing files in the same directory
-"map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-"==> tab mapping 1.2
-" map <leader>t :tabnew<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>w :tabclose<cr>
-" map <leader>tm :tabmove
-" map <leader><tab> :tabnext<cr>
-" Let 'tl' toggle between this and the last accessed tab
-" let g:lasttab = 1
-" nmap <Leader>t<tab> :exe "tabn ".g:lasttab<CR>
-" au TabLeave * let g:lasttab = tabpagenr()
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-"==> tab mapping 2
-"map tt :tabnew 
-"map <M-Right> :tabn<CR>
-"imap <M-Right> <ESC>:tabn<CR>
-"map <M-Left> :tabp<CR>
-"imap <M-Left> <ESC>:tabp<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -488,12 +270,11 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
+set clipboard+=unnamedplus
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ => Autocompletion, Search and Files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" needed so deoplete can auto select the first suggestion
-set completeopt+=noinsert
 " comment this line to enable autocompletion preview window
 " (displays documentation related to the selected completion option)
 " disabled by default because preview makes the window flicker
@@ -539,29 +320,6 @@ nnoremap <silent> // :noh<CR>
 
 " For regular expressions turn magic on
 set magic
-
-" ============================================================================
-" => Visual mode related
-" ============================================================================
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-
-" ============================================================================
-" Language specific settings
-" ============================================================================
-
-" clear empty spaces at the end of lines on save of python files
-" We're trailing white spaces on save already so this is disabled
-"autocmd BufWritePre *.py :%s/\s\+$//e
-
-" Ability to add python breakpoints
-" (I use ipdb, but you can change it to whatever tool you use for debugging)
-au FileType python map <silent> <leader>b Oimport ipdb; ipdb.set_trace()<esc>
-
-
 
 " ============================================================================
 " Plugins settings and mappings
@@ -611,82 +369,9 @@ endfunction
 
 autocmd BufEnter * call NERDTreeRefresh()
 
-" ----------------------------- Tasklist ------------------------------
-
-" show pending tasks list
-map <F2> :TaskList<CR>
-
-" ----------------------------- Neomake ------------------------------
-
-" Run linter on write
-autocmd! BufWritePost * Neomake
-
-" Check code as python3 by default
-let g:neomake_python_python_maker = neomake#makers#ft#python#python()
-let g:neomake_python_flake8_maker = neomake#makers#ft#python#flake8()
-let g:neomake_python_python_maker.exe = 'python3 -m py_compile'
-let g:neomake_python_flake8_maker.exe = 'python3 -m flake8'
-
-" Disable error messages inside the buffer, next to the problematic line
-let g:neomake_virtualtext_current_error = 0
-
 " ----------------------------- Fzf ------------------------------
 "nmap ,e :FZF<CR>
 nmap <C-p> :FZF<CR>
-
-"" file finder mapping
-"nmap ,e :Files<CR>
-"" tags (symbols) in current file finder mapping
-"nmap ,g :BTag<CR>
-"" the same, but with the word under the cursor pre filled
-"nmap ,wg :execute ":BTag " . expand('<cword>')<CR>
-"" tags (symbols) in all files finder mapping
-"nmap ,G :Tags<CR>
-"" the same, but with the word under the cursor pre filled
-"nmap ,wG :execute ":Tags " . expand('<cword>')<CR>
-"" general code finder in current file mapping
-"nmap ,f :BLines<CR>
-"" the same, but with the word under the cursor pre filled
-"nmap ,wf :execute ":BLines " . expand('<cword>')<CR>
-"" general code finder in all files mapping
-"nmap ,F :Lines<CR>
-"" the same, but with the word under the cursor pre filled
-"nmap ,wF :execute ":Lines " . expand('<cword>')<CR>
-"" commands finder mapping
-"nmap ,c :Commands<CR>
-
-" ----------------------------- Deoplete -----------------------------
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option({
-\   'ignore_case': v:true,
-\   'smart_case': v:true,
-\})
-" complete with words from any opened file
-let g:context_filetype#same_filetypes = {}
-let g:context_filetype#same_filetypes._ = '_'
-
-" ----------------------------- Jedi-vim ------------------------------
-
-" Disable autocompletion (using deoplete instead)
-let g:jedi#completions_enabled = 0
-
-" All these mappings work only for python code:
-" Go to definition
-let g:jedi#goto_command = ',d'
-" Find ocurrences
-let g:jedi#usages_command = ',o'
-" Find assignments
-let g:jedi#goto_assignments_command = ',a'
-" Go to definition in new tab
-nmap ,D :tab split<CR>:call jedi#goto()<CR>
-
-" ----------------------------- Ack.vim ------------------------------
-
-" mappings
-nmap ,r :Ack 
-nmap ,wr :execute ":Ack " . expand('<cword>')<CR>
 
 " ----------------------------- Window Chooser ------------------------------
 
@@ -718,17 +403,6 @@ highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 "  mode)
 let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
-"" ----------------------------- Yankring -------------------------------
-"
-"if using_neovim
-"    let g:yankring_history_dir = '~/.config/nvim/'
-"    " Fix for yankring and neovim problem when system has non-text things
-"    " copied in clipboard
-"    let g:yankring_clipboard_monitor = 0
-"else
-"    let g:yankring_history_dir = '~/.vim/dirs/'
-"endif
-
 " ----------------------------- Airline ------------------------------
 
 let g:airline_powerline_fonts = 0
@@ -755,10 +429,6 @@ else
     let g:webdevicons_enable = 0
 endif
 
-
-" ----------------------------- Emmet ------------------------------
-" to avoid emmet mess around <C-y>
-let g:user_emmet_leader_key='<C-Z>'
 
 " ----------------------------- Custom configurations ----------------
 
