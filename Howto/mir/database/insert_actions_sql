@@ -1,0 +1,23 @@
+DROP PROCEDURE IF EXISTS adddata;
+DELIMITER $$
+ 
+CREATE PROCEDURE adddata()
+BEGIN
+    set @counter = (select max(`id`) from `log_action`);
+    set @counter_end = @counter + 1000;
+
+    WHILE @counter < @counter_end DO
+        INSERT INTO `log_action` 
+             (`id`, `mission_id`, `action_type`, `action_id`, `state`, `message`, `start_time`, `end_time`, `parameters`)  
+        VALUES 
+             ((@counter := @counter + 1), '2', 'relative_move', 79, 'Succeded', 'Exiting without moving..', '2020-06-19 14:56:31', '2020-06-19 14:56:31', '{"x": 0, "y": 0, "orientation": 0, "max_linear_speed": 0.5, "max_angular_speed": 0.5, "collision_detection": 1}');
+    END WHILE;
+END$$
+ 
+DELIMITER ;
+
+begin;
+SET FOREIGN_KEY_CHECKS=0;
+call adddata();
+SET FOREIGN_KEY_CHECKS=1;
+commit;

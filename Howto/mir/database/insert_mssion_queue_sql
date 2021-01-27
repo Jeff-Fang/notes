@@ -1,0 +1,81 @@
+DROP PROCEDURE IF EXISTS adddata;
+DELIMITER $$
+ 
+CREATE PROCEDURE adddata()
+BEGIN
+    set @counter = (select max(`id`)+1 from `mission_queue`);
+    set @counter_end = @counter + 1000000;
+
+    WHILE @counter <= @counter_end DO
+        INSERT INTO `mission_queue` 
+             (`id`, `mission_id`, `fleet_schedule_guid`, `robot_id`, `state`, `comment`, `earliest_start_time`, `order_time`, `start_time`, `finish_time`, `created_by_id`, `priority`, `high_priority`, `description`)  
+        VALUES 
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', ''),
+             ((@counter := @counter + 1), '1', '', NULL, 'Done', 'ActionList was executed without problems..', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:13', '2020-02-20 13:22:32', 'mirconst-guid-0000-0005-users0000000', '1', '0', '');
+    END WHILE;
+END$$
+ 
+DELIMITER ;
+
+begin;
+SET FOREIGN_KEY_CHECKS=0;
+call adddata();
+SET FOREIGN_KEY_CHECKS=1;
+commit;
+
+DROP PROCEDURE IF EXISTS adddata;

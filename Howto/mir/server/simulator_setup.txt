@@ -1,0 +1,6 @@
+docker run -p 80:80 -p 502:502 -p 8080:8080 -p 8888:8888 -p 9090:9090 -itd --name="mir260" mirrobots/simulator:2.6.0
+
+open the database, and look in the table "ros_setting". The current_configuration should be 2 for it to be a simulator.
+and you need an empty file called MIR_SIMULATOR in /usr/local/mir
+Login the docker image by:
+`docker exec -it mir260 bash`
